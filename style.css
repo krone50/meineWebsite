@@ -1,0 +1,132 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+.mitte{
+    display: flex;
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+}
+header{
+    margin-top: 23px;
+    margin-bottom: 23px;
+}
+header.mitte img {
+    width: 100%; /* Bild passt sich an die gesamte Breite des Containers an */
+    height: auto; /* Höhe wird proportional zur Breite angepasst */
+    object-fit: cover; /* Stellt sicher, dass das Bild den Container ausfüllt, ohne verzerrt zu werden */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    background: white;
+    height: 3px;
+    width: 30px;
+    margin: 5px 0;
+}
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    /* Footer-Stile */
+.footer {
+    background-color: #333;  /* Dunkelgrau */
+    color: #fff;  /* Weißer Text */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Social Media Links */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #555;  /* Hover-Effekt */
+}
+
+.social-icon.youtube {
+    background-color: #FF0008; /* Youtube-Farbe */
+}
+
+.social-icon.instagram {
+    background-color: #E4405F; /* Instagram-Farbe */
+}
+
+.social-icon.linkedin {
+    background-color: #0077B5; /* LinkedIn-Farbe */
+}
+    @media screen and (min-width: 768px) {
+        body {
+            font-size: 14px;
+            background: lightblue;
+        }
+    }
