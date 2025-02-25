@@ -1,5 +1,99 @@
+/* Globales Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Container für die Inhalte */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-block;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.highlights ul {
+    list-style: none;
+}
+
+.highlights ul li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.highlights ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.highlights ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    background-color: lightblue;
+    padding: 10px 0;
+}
+
+footer p {
+    font-size: 16px;
 }
