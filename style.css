@@ -36,11 +36,15 @@ header.mitte img {
 nav{
     height: 80px;
     background: var(--backgroud-color);
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 nav.logo{
-    margin-left:30px;
+    margin-left: 30px;
+    font-family: Arial;
+    font-size: 35px;
+    font-variant: small-caps;
     text-decoration: none;
 }
 nav ul{
@@ -85,7 +89,7 @@ nav ul a{
 }
 .dropdown li{
     height: 70px;
-    width: 100px;
+    width: 100%;
 }
 .dropdown li a{
     justify-content: flex-start;
@@ -103,8 +107,42 @@ nav input[type="checkbox"]{
     justify-content: center;
     align-items: center;
 }
-@media (max-height:800px)
+.toggle_button{
+    width: 30px;
+    height: 23px;
+
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bar{
+    height: 4px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 100px;
+}
+@media (max-width:800px)
 {
+    .toggle_button{
+        display: flex;
+    }
+    nav ul{
+        height: min-content;
+        width: 100%;
+        background: var(--backgroud-color);
+    
+        display: block;
+        position: absolute;
+        top: 80px;
+    }
+    nav li{
+        height: min-content;
+        width: 100%;
+    }
     footer{
         position: static;
     }
