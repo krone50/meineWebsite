@@ -103,10 +103,17 @@ nav input[type="checkbox"]{
     justify-content: center;
     align-items: center;
 }
-
-
+@media (max-height:800px)
+{
+    footer{
+        position: static;
+    }
+    header{
+        padding-top: 40px;
+    }
+}
     /* Footer-Stile */
-footer {
+.footer-distributed{
     position: fixed;
     bottom: 0;
     box-sizing: border-box;
@@ -118,28 +125,71 @@ footer {
     padding: 50px 50px 60px 50px;
     margin-top: 50px;
 }
-.footer .footer-left .footer-center .footer-right{
+.footer-distributed .footer-left .footer-distributed .footer-center .footer-distributed .footer-right{
     display: inline-block;
     vertical-align: top;;
 
 }
-.footer .footer-center{
+.footer-distributed .footer-left{
+    width: 30px;
+}
+
+.footer-distributed .footer-center{
     width: 35%;
 }
-.footer .footer-center{
+.footer-distributed .footer-links{
+    margin: 20px 0 12px;
+}
+.footer-distributed .footer-links a{
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+.footer-distributed .footer-center{
     width: 38px;
     height: 38px;
     border-radius: 50%;
+    text-align: center;
     line-height: 42px;
+    margin: 10px 15px;
     vertical-align: middle;
 }
-
+.footer-distributed .footer-right{
+    width: 30px;
+}
+.footer-distributed .footer-about-me{
+    line-height: 20px;
+    font-size: 13px;
+    margin: 0;
+}
+.footer-distributed .footer-icons{
+    margin-top: 25px;
+}
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width:35ppx;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center; 
+}
+.footer-links a:hover{
+    color: #555;
+}
 
 /* Social Media Links */
 .social-links {
     margin-top: 10px;
 }
-
+@media(max-width: 880px){
+    .footer-distributed .footer-links, .footer-distributed .footer-center, .footer-distributed .footer-right{
+        display:block;
+        width: 100%;
+        margin-bottom: 40 px;
+        text-align: center;
+    }
+}
 .social-icon {
     text-decoration: none;
     color: #fff;
@@ -165,12 +215,3 @@ footer {
 .social-icon.linkedin {
     background-color: #0077B5; /* LinkedIn-Farbe */
 }
-    @media screen and (min-width: 768px) {
-        body {
-            font-size: 14px;
-            background: lightblue;
-        }
-        footer{
-            position: static;
-        }
-    }
