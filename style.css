@@ -164,7 +164,6 @@ nav input[type="checkbox"]{
 .footer-distributed {
     background-color: #333; /* Dunkler Hintergrund */
     color: #fff;
-    text-align: center;
     padding: 30px 20px;
     width: 100%;
     position: fixed;
@@ -174,33 +173,40 @@ nav input[type="checkbox"]{
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Elemente gleichmäßig verteilen */
+    justify-content: space-between; /* Elemente werden korrekt verteilt */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto; /* Footer in der Mitte zentrieren */
     flex-wrap: wrap; /* Falls der Bildschirm klein ist, Elemente umbrechen */
-}
-
-.footer-left, .footer-center, .footer-right {
-    flex: 1; /* Alle drei Spalten bekommen gleich viel Platz */
-    min-width: 250px; /* Verhindert, dass sie zu schmal werden */
     padding: 10px;
-    text-align: center; /* Text in der Mitte */
 }
 
-/* Links im Footer */
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-.footer-links a:hover {
-    color: var(--accent-color);
+/* Linke Spalte */
+.footer-left {
+    flex: 1;
+    text-align: left; /* Links ausrichten */
+    min-width: 250px;
 }
 
-/* Social Media Icons */
+/* Mittlere Spalte */
+.footer-center {
+    flex: 1;
+    text-align: center; /* Mittig lassen */
+    min-width: 250px;
+}
+
+/* Rechte Spalte */
+.footer-right {
+    flex: 1;
+    text-align: right; /* Rechts ausrichten */
+    min-width: 250px;
+}
+
+/* Social Media Links */
 .social-links {
-    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end; /* Icons nach rechts ausrichten */
+    gap: 15px;
 }
 .social-icon {
     text-decoration: none;
@@ -216,10 +222,17 @@ nav input[type="checkbox"]{
 .social-icon.instagram { background-color: #E4405F; }
 .social-icon.linkedin { background-color: #0077B5; }
 
-/* Responsive Design */
+/* Responsive Design für kleine Bildschirme */
 @media (max-width: 800px) {
     .footer-container {
-        flex-direction: column; /* Untereinander statt nebeneinander */
+        flex-direction: column;
         text-align: center;
+    }
+    .footer-left, .footer-center, .footer-right {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .social-links {
+        justify-content: center; /* Icons zentrieren auf kleinen Bildschirmen */
     }
 }
