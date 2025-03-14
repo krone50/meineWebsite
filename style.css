@@ -181,25 +181,26 @@ nav input[type="checkbox"]{
     padding: 10px;
 }
 
-/* Linke Spalte */
-.footer-left {
+/* Spalten gleichmäßig aufteilen */
+.footer-left, .footer-center, .footer-right {
     flex: 1;
-    text-align: left; /* Links ausrichten */
-    min-width: 250px;
+    min-width: 250px;  /* Verhindert, dass sie zu schmal werden */
+    padding: 10px;
+    text-align: center; /* Text zentrieren */
 }
 
-/* Mittlere Spalte */
-.footer-center {
-    flex: 1;
-    text-align: center; /* Mittig lassen */
-    min-width: 250px;
+/* Zentriert Icons mit Text darunter */
+.footer-center, .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Rechte Spalte */
-.footer-right {
-    flex: 1;
-    text-align: right; /* Rechts ausrichten */
-    min-width: 250px;
+/* Kontaktinfos sollen untereinander sein */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Social Media Links */
