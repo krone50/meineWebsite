@@ -206,14 +206,18 @@ nav input[type="checkbox"]{
 .social-links {
     display: flex;
     justify-content: flex-end; /* Icons nach rechts ausrichten */
-    gap: 15px;
+    gap: 15px; /* Abstand zwischen den Icons */
 }
-.social-icon {
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* Feste Größe für die Icons */
+    height: 40px;
+    border-radius: 50%; /* Runde Form */
     text-decoration: none;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: background-color 0.3s;
+    color: #fff; /* Icon-Farbe */
+    transition: background-color 0.3s, transform 0.2s;
 }
 .social-icon:hover {
     background-color: #555;
