@@ -26,7 +26,7 @@ body{
     align-items: center; /* Vertikal zentrieren */
 }
 header.mitte img {
-    width: auto; /* Bild passt sich an die gesamte Breite des Containers an */
+    width: 100%; /* Bild passt sich an die gesamte Breite des Containers an */
     height: auto; /* Höhe wird proportional zur Breite angepasst */
     object-fit: cover; /* Stellt sicher, dass das Bild den Container ausfüllt, ohne verzerrt zu werden */
 }
