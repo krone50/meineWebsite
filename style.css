@@ -20,7 +20,8 @@ body{
     height: 100%;
 }
 header.homescreen{
-    max-width: 800px;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
