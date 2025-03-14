@@ -157,7 +157,7 @@ nav input[type="checkbox"]{
 }
     /* Footer-Stile */
 .footer-distributed{
-    position: fixed;
+    position: relative;
     bottom: 0;
     box-sizing: border-box;
     width: 100%;
