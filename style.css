@@ -218,9 +218,23 @@ nav input[type="checkbox"]{
 .social-icon:hover {
     background-color: #555;
 }
-.social-icon.youtube { background-color: #FF0008; }
-.social-icon.instagram { background-color: #E4405F; }
-.social-icon.linkedin { background-color: #0077B5; }
+.social-links a .fa-youtube {
+    background-color: #FF0008;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-links a .fa-instagram {
+    background-color: #E4405F;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-links a .fa-linkedin-in {
+    background-color: #0077B5;
+    padding: 10px;
+    border-radius: 50%;
+}
 
 /* Responsive Design für kleine Bildschirme */
 @media (max-width: 800px) {
