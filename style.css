@@ -209,15 +209,23 @@ nav input[type="checkbox"]{
     gap: 15px; /* Abstand zwischen den Icons */
 }
 .social-links a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;  /* Feste Größe für die Icons */
-    height: 40px;
-    border-radius: 50%; /* Runde Form */
+    width: 40px;  /* Einheitliche Breite */
+    height: 40px; /* Einheitliche Höhe */
+    border-radius: 50%; /* Macht die Icons rund */
+    color: white; 
+    font-size: 20px; /* Einheitliche Icon-Größe */
     text-decoration: none;
-    color: #fff; /* Icon-Farbe */
-    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px;
+}
+.social-links a i {
+    font-size: 20px; /* Gleiche Icon-Größe für alle */
+}
+/* Hover-Effekt */
+.social-links a:hover {
+    opacity: 0.8;
 }
 .social-icon:hover {
     background-color: #555;
