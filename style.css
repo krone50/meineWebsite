@@ -19,13 +19,13 @@ html{
 body{
     height: 100%;
 }
-.mitte{
+header.homescreen{
     max-width: 800px;
     display: flex;
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
 }
-header.mitte img {
+header.homescreen img {
     width: 100%; /* Bild passt sich an die gesamte Breite des Containers an */
     height: auto; /* Höhe wird proportional zur Breite angepasst */
     object-fit: cover; /* Stellt sicher, dass das Bild den Container ausfüllt, ohne verzerrt zu werden */
