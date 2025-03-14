@@ -19,7 +19,11 @@ html{
 body{
     height: 100%;
 }
-header.homescreen{
+footer{
+    position: fixed;
+    bottom:  0;
+}
+body.homescreen{
     width: 100%;
     max-width: 100%;
     display: flex;
