@@ -168,12 +168,25 @@ nav ul a{
     margin-left: 8px; /* Abstand zum Text */
     transition: transform 0.3s ease; /* Sanfte Drehung */
 }
-/* Pfeil drehen, wenn Checkbox aktiviert ist */
-#poems_checkbox:checked + label .dropdown-arrow {
-    transform: rotate(180deg);
+
+/* Pfeil drehen, wenn das <li> gehobert wird */
+nav li:hover .dropdown-arrow {
+    transform: rotate(180deg); /* Drehung des Pfeils bei Hover */
 }
-nav li:hover .dropdown{
-    display: flex;
+
+/* Dropdown anzeigen, wenn <li> gehobert wird */
+nav li:hover .dropdown {
+    display: flex; /* Dropdown sichtbar bei Hover */
+}
+
+/* Verstecke das Dropdown standardmäßig */
+.dropdown {
+    display: none; /* Dropdown ist standardmäßig unsichtbar */
+}
+
+/* Optional: Hier kannst du den Pfeil zurückdrehen, wenn der Hover vorbei ist */
+nav li:hover .dropdown-arrow {
+    transform: rotate(180deg); /* Optional: Pfeil dreht sich zurück, wenn der Hover endet */
 }
 nav input[type="checkbox"]{
     display: none;
