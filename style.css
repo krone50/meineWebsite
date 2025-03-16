@@ -108,6 +108,7 @@ nav ul{
     justify-content: flex-end;
     align-items: center;
     list-style: none;
+    margin-left: auto;
 }
 nav li{
     height: 100%;
