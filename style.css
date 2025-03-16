@@ -27,6 +27,11 @@ body{
     background-color: var(--background-color);
     color: var(--text-color);
 }
+.homescreen {
+    background: url('homescreen.avif') no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Volle Höhe des Bildschirms */
+}
 .main-content {
     flex: 1; /* Füllt den verfügbaren Platz, schiebt Footer nach unten */
 }
