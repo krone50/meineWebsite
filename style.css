@@ -93,6 +93,14 @@ nav.logo{
     font-variant: small-caps;
     text-decoration: none;
 }
+nav .logo-text {
+    font-family: Arial, sans-serif;
+    font-size: 24px; /* Schriftgröße für den Text */
+    font-weight: bold; /* Fettdruck für den Text */
+    color: var(--text-color); /* Textfarbe */
+    margin-left: 10px; /* Abstand zwischen Logo und Text */
+}
+
 nav ul{
     height: 100%;
     display: flex;
