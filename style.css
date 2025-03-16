@@ -24,8 +24,9 @@ html{
 }
 body{
     height: 100%;
-    background-color: var(--background-color);
     color: var(--text-color);
+    background: url(homescreen.avif) no-repeat center center fixed !important;
+    background-size: cover !important;
 }
 .homescreen {
     background: url('homescreen.avif') no-repeat center center;
@@ -138,6 +139,15 @@ nav ul a{
     justify-content: flex-start;
     padding-left: 30px;
     width: calc(100% - 30px);
+}
+.dropdown-arrow {
+    display: inline-block;
+    margin-left: 8px; /* Abstand zum Text */
+    transition: transform 0.3s ease; /* Sanfte Drehung */
+}
+
+.dropdown-item:hover .dropdown-arrow {
+    transform: rotate(180deg); /* Pfeil nach oben drehen */
 }
 nav li:hover .dropdown{
     display: flex;
