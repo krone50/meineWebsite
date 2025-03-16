@@ -108,7 +108,7 @@ nav li{
     position: relative;
 }
 nav li:hover{
-    background: var(--accent-colour);
+    color: var(--accent-color);
 }
 nav ul a{
     height: 100%;
@@ -119,6 +119,7 @@ nav ul a{
     justify-content: center;
 
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .dropdown {
