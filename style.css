@@ -36,24 +36,218 @@ body{
 .main-content {
     flex: 1; /* Füllt den verfügbaren Platz, schiebt Footer nach unten */
 }
-/* Dark Mode Button Design */
-#dark-mode-toggle {
+#switch_wrap {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: var(--background-color);
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-    padding: 10px 15px;
-    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    width: 210px;
+    height: 110px;
+    background: linear-gradient(to bottom right, #dadada, #b0b0b0);
+    border-radius: 60px;
+}
+#switch {
+    position: relative;
+    top: 5px;
+    overflow: hidden;
+    left: 5px;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    background-color: #171F47;
+    border-radius: 60px;
+    z-index: 1;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.05) inset;
+    transition: background-color 300ms ease-in-out;
     cursor: pointer;
-    font-size: 16px;
+}
+.star{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fafafa;
+    z-index: 6;
+    transition: backgroud-color 100ms ease-in-out;
+}
+.special_star{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fafafa;
+    z-index: 6;
+    transition: backgroud-color 100ms ease-in-out;
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+    animation: filante 1.5s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+&:after {
+    content: '';
+    dipslay: black;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(to right, rgba)255
 }
 
-/* Button Hover Effekt */
-#dark-mode-toggle:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
+.bubble {
+    position: relative;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background-color: F8F3DF;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px rgba(252, 236, 197, 0.3);
+    z-index: 9;
+    overflow: hidden; 
+    transition: left 300ms ease-in-out, background-color 300ms ease-in-out;
+
+    .crat1 {
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #E3DBC7;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2) inset;
+    transition: opacity 200ms ease-in-out;
+
+    &.active .crat1 {
+        opacity: 0;
+    };
+}
+}
+
+
+    .crat2 {
+    position: absolute;
+    top: 20px;
+    left: 10px; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #E3DBC7;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2) inset;
+    transition: opacity 200ms ease-in-out;
+    &.active .crat2 {
+        opacity: 0;
+    };
+}
+    .crate3 {
+    position: absolute;
+    top: 15px;
+    left: 45px; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #E3DBC7;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.2) inset;
+    transition: opacity 200ms ease-in-out;
+    
+    &.active .crat3{
+        opacity: 0;
+    };
+}
+    .tree {
+        position: relative;
+        bottom: 50px;
+        left: 90px; 
+        width: 0px;
+        height: 0px;
+        border-left: 30px solid transparent;
+        border-right: 30px solid #365E33;
+        border-top: 100px solid transparent; 
+        z-index: 7;
+        transition: left 300ms ease-in-out, border-right-color;
+
+        &.t2 {
+        left: 72px;
+        bottom: 130px;
+        }
+        &:after{
+            left: 30px; 
+            width: 0;
+            height: 0;
+            content: '';
+            position: relative;
+            height: 0px;
+            border-left: 30px solid transparent;
+            border-right: 30px solid #294137;
+            border-top: 100px solid transparent; 
+            z-index: 7;
+            transition: border-left-color 300ms ease-in-out;
+        }
+    }
+        .cloud {
+        position: relative;
+        bottom: 255px;
+        left: 5px;
+        width: 50px;
+        height: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        z-index: 8; 
+        opacity: 0;
+        animation: travel 8s ease-in-out infinite;
+        transition: opacity 300ms ease-in-out;
+
+        &:after {
+        content: '';
+        position: absolute;
+        top: -6px; 
+        left: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        }
+        &:before {
+        content: '';
+        position: absolute;
+        top: -10px; 
+        left: 5px;
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        }
+    }
+    &.activate {
+        background-color: #78DEFA;
+    }
+    &.active .bubble {
+        left: 100px;
+        background-color: #F4DC23;
+        box-shadow: 0px 0px 20px 10px rgba(247, 219, 5, 0.2);
+    }
+    &.active .star {
+        background-color: transparent;
+    }
+    &.active .tree{
+        left: -30px;
+        border-right-color: #57A152;
+    }
+    &.active .tree:after{
+        border-left-color: #77D270
+    }
+    &.active .cloud {
+        opacity: 0.7;
+    }
+    &.active .crat1, &.active .crat2, &.active .crat3 {
+        opacity: 0;
+    }
+@keyframes travel {
+    0% {left: 5px;}
+    50% {left: 70px;}
+    100% {left: 5px;}
+}
+@keyframes filante {
+    from {bottom: 0; left: 0;}
+    to {bottom: 120px; left: 300px;}
 }
 
 footer{
