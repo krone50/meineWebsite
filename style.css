@@ -252,7 +252,7 @@ body{
 }
 
 footer{
-   position: fixed;
+   position: relative;
     bottom: -100px; /* Initial außerhalb des sichtbaren Bereichs */
     left: 0;
     width: 100%;
