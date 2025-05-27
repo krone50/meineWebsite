@@ -24,11 +24,11 @@ html, body {
     background-color: #333 !important; /* Überall dunkles Grau */
     min-height: 100vh;
 }
-
 .homescreen {
     background: url('homescreen.avif') no-repeat center center;
     background-size: cover;
-    /* homescreen ist nur der Bildbereich */
+    min-height: 100vh;
+    width: 100%;
 }
 .main-content {
     flex: 1; /* Füllt den verfügbaren Platz, schiebt Footer nach unten */
