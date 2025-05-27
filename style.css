@@ -20,19 +20,15 @@
 }
 
 
-html{
-    height: 100%;
+html, body {
+    background-color: #333 !important; /* Überall dunkles Grau */
+    min-height: 100vh;
 }
-body{
-    height: 100%;
-    color: var(--text-color);
-    background: url('homescreen.avif') no-repeat center center fixed !important;
-    background-size: cover !important;
-}
+
 .homescreen {
     background: url('homescreen.avif') no-repeat center center;
     background-size: cover;
-    height: 100vh; /* Volle Höhe des Bildschirms */
+    /* homescreen ist nur der Bildbereich */
 }
 .main-content {
     flex: 1; /* Füllt den verfügbaren Platz, schiebt Footer nach unten */
