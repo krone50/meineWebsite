@@ -1,102 +1,99 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite | Marius-Poetry</title>
-    <link rel="icon" type="image/png" href="/Logo_Krone-MK.png" sizes="96x96" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>marius-poetry Darkmode Demo</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-        <nav>
-       <a class="logo" href="/">
-    <img src="Logo_Krone-MK.png" alt="Logo"/>
-        </a>
-        <span class="logo-text">marius-poetry</span>
- <div class="navbar-right">
-    <input type="checkbox" id="darkmode-toggle" hidden>
-  <label for="darkmode-toggle" id="switch" tabindex="0" aria-label="Darkmode Toggle">
-    <span class="star"></span>
-    <span class="special_star"></span>
-    <span class="bubble">
-      <span class="crat1"></span>
-      <span class="crat2"></span>
-      <span class="crat3"></span>
-    </span>
-    <span class="tree">
-      <span class="tree t2"></span>
-    </span>
-    <span class="cloud"></span>
-    <!-- Optional: Sonne/Mond Icon -->
-  </label>
-</div>
-            <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-                <li class="expandable_li">
-                    <input type ="checkbox" id="poems_checkbox">
-                    <label for="poems_checkbox">Poems<span class="dropdown-arrow"><i class="fa-solid fa-house-chimney"></i></span></label>
-                    <ul class="dropdown">
-                        <li><a href="ErleuchtungeinesEngels.html">Erleuchtung eines Engels</a></li>
-                        <li><a href="#">Blau</a></li>
-                    </ul>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-        <main>
-            <section class="homescreen">
-            </section>
-        </main>
-        <section>
-        <h1>section 1</h1>
-        <p>Lorem Ipsum</p>
-        </section>
+  <nav class="navbar">
+    <a class="logo" href="/">
+      <img src="Logo_Krone-MK.png" alt="Logo"/>
+      <span class="logo-text">marius-poetry</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#poems">Poems</a></li>
+    </ul>
+    <div class="navbar-right">
+      <!-- Darkmode Toggle -->
+      <input type="checkbox" id="darkmode-toggle" hidden>
+      <label for="darkmode-toggle" id="switch" tabindex="0" aria-label="Darkmode Toggle">
+        <span class="star"></span>
+        <span class="special_star"></span>
+        <span class="bubble">
+          <span class="crat1"></span>
+          <span class="crat2"></span>
+          <span class="crat3"></span>
+        </span>
+        <span class="tree">
+          <span class="tree t2"></span>
+        </span>
+        <span class="cloud"></span>
+      </label>
+    </div>
+    <!-- Burger-Menü -->
+    <input type="checkbox" id="toggle_button" hidden>
+    <label for="toggle_button" class="toggle_button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+  </nav>
 
-    <footer class="footer-distributed">
-        <div class="footer-container">
-            <div class="footer-left">
-                <h3>Logo</h3>
-                <p class="footer-about-me">
-                <span>About me:</span>
-                <strong>Dualer Student in Wirtschaftsinformatik</strong>, der gerne atmet.
-                </p>
-            </div>
-    
-            <div class="footer-center">
-                <i class="fa-solid fa-location-dot"></i>
-                <p><span>Mülheim an der Ruhr</span>, Deutschland</p>
-            </div>
-    
-            <div class="contact-info">
-                <i class="fa-solid fa-phone"></i>
-                <p>+49 1578 9538750</p>
-            </div>
-    
-            <div class="contact-info">
-                <i class="fa-solid fa-envelope"></i>
-                <p><a href="mailto:krontalmarius@aol.com">krontalmarius@aol.com</a></p>
-            </div>
+  <main>
+    <section class="homescreen">
+      <h1>Willkommen auf marius-poetry!</h1>
+    </section>
+    <section>
+      <h2>section 1</h2>
+      <p>Lorem Ipsum</p>
+    </section>
+  </main>
+
+  <footer class="footer-distributed visible">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Logo</h3>
+        <p class="footer-about-me">
+          <span>About me:</span>
+          <strong>Dualer Student in Wirtschaftsinformatik</strong>, der gerne atmet.
+        </p>
+      </div>
+      <div class="footer-center">
+        <i class="fa-solid fa-location-dot"></i>
+        <p><span>Mülheim an der Ruhr</span>, Deutschland</p>
+        <div class="contact-info">
+          <i class="fa-solid fa-phone"></i>
+          <p>+49 1578 9538750</p>
         </div>
-    
-            <div class="footer-right">
-                <div class="social-links">
-                    <p>© 2025 Marius-Poetry. All rights reserved.</p>
-                    <p>Design: Marius Krontal</p>
-                    <a href="https://www.youtube.com/@krone4426" target="_blank"> <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/marius.2609/" target="_blank"> <i class="fa-brands fa-instagram"></i>
-                    </a> 
-                    <a href="https://de.linkedin.com/in/marius-krontal-31bbaa292" target="_blank"> <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="contact-info">
+          <i class="fa-solid fa-envelope"></i>
+          <p><a href="mailto:krontalmarius@aol.com">krontalmarius@aol.com</a></p>
         </div>
-    </footer>
+      </div>
+      <div class="footer-right">
+        <div class="social-links">
+          <p>© 2025 Marius-Poetry. All rights reserved.</p>
+          <p>Design: Marius Krontal</p>
+          <a href="https://www.youtube.com/@krone4426" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/marius.2609/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://de.linkedin.com/in/marius-krontal-31bbaa292" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-
+  <script>
+    // Optional: Body-Darkmode-Klasse für globales Darkmode-Styling
+    const darkToggle = document.getElementById("darkmode-toggle");
+    darkToggle.addEventListener("change", function() {
+      document.body.classList.toggle("darkmode", this.checked);
+      document.documentElement.classList.toggle("darkmode", this.checked);
+    });
+  </script>
 </body>
 </html>
