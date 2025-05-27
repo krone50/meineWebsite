@@ -30,9 +30,6 @@ html, body {
     min-height: 100vh;
     width: 100%;
 }
-.main-content {
-    flex: 1; /* Füllt den verfügbaren Platz, schiebt Footer nach unten */
-}
 * DARKMODE TOGGLE – KOMPAKT UND NAVBAR-KONFORM */
 #switch_wrap {
     position: absolute;     /* statt fixed, damit es an die nav-Bar andockt */
