@@ -13,35 +13,30 @@
       <img src="Logo_Krone-MK.png" alt="Logo"/>
       <span class="logo-text">marius-poetry</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#poems">Poems</a></li>
-    </ul>
-    <div class="navbar-right">
-      <!-- Darkmode Toggle -->
-      <input type="checkbox" id="darkmode-toggle" hidden>
-      <label for="darkmode-toggle" id="switch" tabindex="0" aria-label="Darkmode Toggle">
-        <span class="star"></span>
-        <span class="special_star"></span>
-        <span class="bubble">
-          <span class="crat1"></span>
-          <span class="crat2"></span>
-          <span class="crat3"></span>
-        </span>
-        <span class="tree">
-          <span class="tree t2"></span>
-        </span>
-        <span class="cloud"></span>
-      </label>
+    <div class="navbar-group">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#poems">Poems</a></li>
+      </ul>
+      <div class="navbar-right">
+        <!-- Darkmode Toggle -->
+        <input type="checkbox" id="darkmode-toggle" hidden>
+        <label for="darkmode-toggle" id="switch" tabindex="0" aria-label="Darkmode Toggle">
+          <span class="star"></span>
+          <span class="special_star"></span>
+          <span class="bubble">
+            <span class="crat1"></span>
+            <span class="crat2"></span>
+            <span class="crat3"></span>
+          </span>
+          <span class="tree">
+            <span class="tree t2"></span>
+          </span>
+          <span class="cloud"></span>
+        </label>
+      </div>
     </div>
-    <!-- Burger-Menü -->
-    <input type="checkbox" id="toggle_button" hidden>
-    <label for="toggle_button" class="toggle_button">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </label>
   </nav>
 
   <main>
@@ -87,7 +82,7 @@
   </footer>
 
   <script>
-    // Optional: Body-Darkmode-Klasse für globales Darkmode-Styling
+    // Darkmode Toggle: Body-Klasse schalten
     const darkToggle = document.getElementById("darkmode-toggle");
     darkToggle.addEventListener("change", function() {
       document.body.classList.toggle("darkmode", this.checked);
