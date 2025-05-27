@@ -297,10 +297,10 @@ nav .logo {
 }
 
 nav .logo img {
-    width: 46px;        /* größer, Wert nach Geschmack anpassen */
+    width: 26px;        /* größer, Wert nach Geschmack anpassen */
     height: auto;
     margin-top: -8px;   /* nach oben verschoben, Wert ggf. feinjustieren */
-    margin-left: 10px;  /* nach rechts verschoben */
+    margin-left: 5px;  /* nach rechts verschoben */
 }
 nav .logo-text {
     font-family: Arial, sans-serif;
