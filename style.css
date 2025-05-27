@@ -1,30 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
-:root{
-    --backgroud-color: #314453;
-    --darker-backgroud-color: #243848;
-    --accent-color: #41DCE1;
-    --text-color: #FFFFFF;
-}
-*{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: var(--text-colour);
-    box-sizing: border-box;
+/* Grundlayout für die Navbar */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f3f3f3;
+  color: #222;
+  min-height: 100vh;
 }
 
-html, body {
-    background-color: #333 !important; /* Überall dunkles Grau */
-    min-height: 100vh;
-}
-.homescreen {
-    background: url('homescreen.avif') no-repeat center center;
-    background-size: cover;
-    min-height: 100vh;
-    width: 100%;
-}
-/* Grundlayout für die Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -32,16 +15,58 @@ html, body {
   background: rgba(34,34,34, 0.96);
   padding: 0 32px;
   height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Rechtsbündiger Wrapper */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 36px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.nav-links li a:hover {
+  background: #555;
+}
+
 .navbar-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-/* Darkmode Toggle - Checkbox verstecken */
 #darkmode-toggle {
   display: none;
 }
@@ -56,13 +81,16 @@ html, body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background: #222;
   transition: background 0.2s;
+  margin-left: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 #switch:hover {
   background: #444;
 }
 
-/* Beispiel für Sonne/Mond (optional) */
+/* Sonne/Mond (Hauptkreis) */
 #switch::before {
   content: "";
   display: block;
@@ -74,7 +102,7 @@ html, body {
   transition: background 0.5s, box-shadow 0.5s;
 }
 
-/* Beispiel-Animationen für Sterne */
+/* Sternchen */
 #switch .star,
 #switch .special_star {
   position: absolute;
@@ -114,7 +142,7 @@ html, body {
 #switch .bubble .crat2 { width: 2px; height: 2px; left: 7px; top: 5px; }
 #switch .bubble .crat3 { width: 2px; height: 2px; left: 4px; top: 8px; }
 
-/* Beispiel: Baum und Wolke */
+/* Baum und Wolke */
 #switch .tree {
   position: absolute;
   bottom: 4px; left: 6px;
@@ -148,493 +176,166 @@ html, body {
   transform: scale(1.2) rotate(-10deg);
 }
 
-/* Optional: auf gesamtes Layout anwenden */
-body.darkmode,
-html.darkmode {
-  background: #222 !important;
-  color: #eee !important;
+/* Responsive Burger Menü */
+.toggle_button {
+  width: 30px;
+  height: 23px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
-
-.star {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #fafafa;
-    z-index: 6;
-    top: 8px;
-    left: 75px;
-    transition: background-color 100ms;
+.bar {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 100px;
+  margin: 2px 0;
 }
-
-.special_star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    background-color: #fafafa;
-    z-index: 6;
-    bottom: 4px;
-    left: 6px;
-    transform: rotate(180deg);
-    animation: filante 1.2s ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-.bubble {
-    position: absolute;
-    left: 12px;
-    width: 30px;
-    height: 30px;
-    background-color: #F8F3DF;
-    border-radius: 50%;
-    box-shadow: 0px 0px 12px 5px rgba(252, 236, 197, 0.2);
-    z-index: 9;
-    overflow: hidden;
-    transition: left 300ms, background-color 300ms;
-}
-
-.bubble .crat1,
-.bubble .crat2,
-.bubble .crat3 {
-    position: absolute;
-    border-radius: 50%;
-    background-color: #E3DBC7;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.15) inset;
-    transition: opacity 200ms;
-}
-.bubble .crat1 { top: 14px; left: 12px; width: 12px; height: 12px; }
-.bubble .crat2 { top: 6px; left: 4px; width: 6px; height: 6px; }
-.bubble .crat3 { top: 4px; left: 18px; width: 4px; height: 4px; }
-
-.tree {
-    position: absolute;
-    bottom: 22px;
-    left: 54px;
-    width: 0px;
-    height: 0px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid #365E33;
-    border-top: 36px solid transparent;
-    z-index: 7;
-    transition: left 300ms, border-right-color 300ms;
-}
-.tree.t2 {
-    left: 39px;
-    bottom: 36px;
-}
-.tree:after{
-    left: 12px;
-    width: 0;
-    height: 0;
-    content: '';
-    position: absolute;
-    border-left: 12px solid transparent;
-    border-right: 12px solid #294137;
-    border-top: 36px solid transparent;
-    z-index: 7;
-    transition: border-left-color 300ms;
-}
-
-.cloud {
-    position: absolute;
-    bottom: 40px;
-    left: 8px;
-    width: 20px;
-    height: 8px;
-    background-color: #fff;
-    border-radius: 5px;
-    z-index: 8;
-    opacity: 0;
-    animation: travel 7s ease-in-out infinite;
-    transition: opacity 300ms;
-}
-.cloud:after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 2px;
-    width: 8px;
-    height: 8px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-.cloud:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-
 @media (max-width: 800px) {
-    #switch_wrap {
-        width: 72px;
-        height: 36px;
-        top: 10px;
-        right: 14px;
-        border-radius: 18px;
-    }
-    #switch {
-        width: 62px;
-        height: 28px;
-        border-radius: 14px;
-        padding: 2px;
-    }
-    .star {
-        width: 7px;
-        height: 7px;
-        top: 3px;
-        left: 40px;
-    }
-    .special_star { left: 2px; bottom: 1px; }
-    .bubble { width: 18px; height: 18px; left: 6px; }
-    .bubble .crat1 { width: 5px; height: 5px; left: 5px; top: 7px; }
-    .bubble .crat2 { width: 2px; height: 2px; left: 1px; top: 3px; }
-    .bubble .crat3 { width: 2px; height: 2px; left: 10px; top: 3px; }
-    .tree { left: 30px; bottom: 18px; border-left: 6px solid transparent; border-right: 6px solid #365E33; border-top: 18px solid transparent; }
-    .tree.t2 { left: 25px; bottom: 26px; }
-    .tree:after { left: 6px; border-left: 6px solid transparent; border-right: 6px solid #294137; border-top: 18px solid transparent; }
-    .cloud { left: 4px; bottom: 20px; width: 10px; height: 4px; }
-    .cloud:after { width: 4px; height: 4px; left: 1px; top: -2px; }
-    .cloud:before { width: 6px; height: 6px; left: 2px; top: -3px; }
-}
-
-
-        }
-        &:after{
-            left: 30px; 
-            width: 0;
-            height: 0;
-            content: '';
-            position: relative;
-            height: 0px;
-            border-left: 30px solid transparent;
-            border-right: 30px solid #294137;
-            border-top: 100px solid transparent; 
-            z-index: 7;
-            transition: border-left-color 300ms ease-in-out;
-        }
-    }
-
-    }
-    &.activate {
-        background-color: #78DEFA;
-    }
-    &.active .bubble {
-        left: 100px;
-        background-color: #F4DC23;
-        box-shadow: 0px 0px 20px 10px rgba(247, 219, 5, 0.2);
-    }
-    &.active .star {
-        background-color: transparent;
-    }
-    &.active .tree{
-        left: -30px;
-        border-right-color: #57A152;
-    }
-    &.active .tree:after{
-        border-left-color: #77D270
-    }
-    &.active .cloud {
-        opacity: 0.7;
-    }
-    &.active .crat1, &.active .crat2, &.active .crat3 {
-        opacity: 0;
-    }
-@keyframes travel {
-    0% {left: 5px;}
-    50% {left: 70px;}
-    100% {left: 5px;}
-}
-@keyframes filante {
-    from {bottom: 0; left: 0;}
-    to {bottom: 120px; left: 300px;}
-}
-body.homescreen{
-    width: 100%;
-    max-width: 100%;
+  .toggle_button {
     display: flex;
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal zentrieren */
-}
-body.homescreen img {
-    width: 100%; /* Bild passt sich an die gesamte Breite des Containers an */
-    max-width: 100vw;
-    height: auto; /* Höhe wird proportional zur Breite angepasst */
-    object-fit: cover; /* Stellt sicher, dass das Bild den Container ausfüllt, ohne verzerrt zu werden */
-}
-
-
-/*Navigation mit BurgerMenu */
-nav{
-    position: fixed;
-    height: 80px;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-nav .logo {
-    display: flex;
-    align-items: center;
-}
-
-nav .logo img {
-    width: 26px;        /* größer, Wert nach Geschmack anpassen */
-    height: auto;
-    margin-top: -8px;   /* nach oben verschoben, Wert ggf. feinjustieren */
-    margin-left: 5px;  /* nach rechts verschoben */
-}
-nav .logo-text {
-    font-family: Arial, sans-serif;
-    font-size: 24px; /* Schriftgröße für den Text */
-    font-weight: bold; /* Fettdruck für den Text */
-    color: var(--text-color); /* Textfarbe */
-    margin-left: 10px; /* Abstand zwischen Logo und Text */
-}
-
-nav ul{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    margin-left: auto;
-}
-nav li{
-    height: 100%;
-    width: 150px;
-    text-align: center;
-    position: relative;
-}
-nav li:hover{
-    color: var(--accent-color);
-}
-nav ul a{
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-
-.dropdown {
-    height: min-content;
-    width: 200px;
-    background: var(--backgroud-color);
-
+  }
+  .nav-links {
     display: none;
     flex-direction: column;
-
+    background: #222;
     position: absolute;
-    left: 0;
-    top: 80px;
-}
-.dropdown li{
-    height: 70px;
-    width: 100%;
-}
-.dropdown li a{
-    justify-content: flex-start;
-    padding-left: 30px;
-    width: calc(100% - 30px);
-}
-.dropdown-arrow {
-    display: inline-block;
-    margin-left: 8px; /* Abstand zum Text */
-    transition: transform 0.3s ease; /* Sanfte Drehung */
+    top: 72px;
+    right: 0;
+    width: 100vw;
+    padding: 32px 0;
+    z-index: 200;
+  }
+  #toggle_button:checked ~ .nav-links {
+    display: flex;
+  }
 }
 
-/* Pfeil drehen, wenn das <li> gehobert wird */
-nav li:hover .dropdown-arrow {
-    transform: rotate(180deg); /* Drehung des Pfeils bei Hover */
+/* Homescreen mit Hintergrundbild */
+.homescreen {
+  background: url('homescreen.avif') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 8px #000;
 }
 
-/* Dropdown anzeigen, wenn <li> gehobert wird */
-nav li:hover .dropdown {
-    display: flex; /* Dropdown sichtbar bei Hover */
-}
-
-/* Verstecke das Dropdown standardmäßig */
-.dropdown {
-    display: none; /* Dropdown ist standardmäßig unsichtbar */
-}
-
-/* Optional: Hier kannst du den Pfeil zurückdrehen, wenn der Hover vorbei ist */
-nav li:hover .dropdown-arrow {
-    transform: rotate(180deg); /* Optional: Pfeil dreht sich zurück, wenn der Hover endet */
-}
-nav input[type="checkbox"]{
-    display: none;
-}
-.expandable_li{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-}
-.toggle_button{
-    width: 30px;
-    height: 23px;
-
-    position: absolute;
-    top: 25px;
-    right: 25px;
-
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.bar{
-    height: 4px;
-    width: 100%;
-    background: var(--text-color);
-    border-radius: 100px;
-}
-@media (max-width:800px)
-{
-    .toggle_button{
-        display: flex;
-    }
-    nav ul{
-        height: min-content;
-        width: 100%;
-        background: var(--backgroud-color);
-    
-        display: block;
-        position: absolute;
-        top: 80px;
-    }
-    nav li{
-        height: min-content;
-        width: 100%;
-    }
-    header{
-        padding-top: 40px;
-    }
-}
-
+/* Footer Styles */
 .footer-distributed {
-    background-color: #333;  /* undurchsichtiges dunkles Grau */
-    color: #fff;
-    padding: 30px 20px;
-    width: 100%;
-    position: static;
-    bottom: auto;
-    left: auto;
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 0.7s cubic-bezier(0.77,0,0.18,1), transform 0.7s cubic-bezier(0.77,0,0.18,1);
-    pointer-events: none;
-    z-index: 20; /* Damit er über dem Hintergrundbild liegt */
-    box-shadow: 0 -5px 32px 0 rgba(0,0,0,0.18); /* sanfter Schatten nach oben */
-    border-top: 3px solid #444; /* optional: dezenter Rand oben */
-}
-.footer-distributed.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+  background-color: #333;
+  color: #fff;
+  padding: 30px 20px;
+  width: 100%;
+  box-shadow: 0 -5px 32px 0 rgba(0,0,0,0.18);
+  border-top: 3px solid #444;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between; /* Elemente werden korrekt verteilt */
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto; /* Footer in der Mitte zentrieren */
-    flex-wrap: wrap; /* Falls der Bildschirm klein ist, Elemente umbrechen */
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
-/* Spalten gleichmäßig aufteilen */
 .footer-left, .footer-center, .footer-right {
-    flex: 1;
-    min-width: 250px;  /* Verhindert, dass sie zu schmal werden */
-    padding: 10px;
-    text-align: center; /* Text zentrieren */
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+  text-align: center;
 }
 
-/* Zentriert Icons mit Text darunter */
 .footer-center, .footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Kontaktinfos sollen untereinander sein */
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Social Media Links */
 .social-links {
-    display: flex;
-    justify-content: flex-end; /* Icons nach rechts ausrichten */
-    gap: 15px; /* Abstand zwischen den Icons */
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;  /* Einheitliche Breite */
-    height: 40px; /* Einheitliche Höhe */
-    border-radius: 50%; /* Macht die Icons rund */
-    color: white; 
-    font-size: 20px; /* Einheitliche Icon-Größe */
-    text-decoration: none;
-    margin: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 5px;
 }
 .social-links a i {
-    font-size: 20px; /* Gleiche Icon-Größe für alle */
+  font-size: 20px;
 }
-/* Hover-Effekt */
 .social-links a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 .social-icon:hover {
-    background-color: #555;
+  background-color: #555;
 }
 .social-links a .fa-youtube {
-    background-color: #FF0008;
-    padding: 10px;
-    border-radius: 50%;
+  background-color: #FF0008;
+  padding: 10px;
+  border-radius: 50%;
 }
-
 .social-links a .fa-instagram {
-    background-color: #E4405F;
-    padding: 10px;
-    border-radius: 50%;
+  background-color: #E4405F;
+  padding: 10px;
+  border-radius: 50%;
 }
-
 .social-links a .fa-linkedin-in {
-    background-color: #0077B5;
-    padding: 10px;
-    border-radius: 50%;
+  background-color: #0077B5;
+  padding: 10px;
+  border-radius: 50%;
 }
 
-/* Responsive Design für kleine Bildschirme */
-@media (max-width: 800px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-left, .footer-center, .footer-right {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-    .social-links {
-        justify-content: center; /* Icons zentrieren auf kleinen Bildschirmen */
-    }
+/* Darkmode für die ganze Seite */
+body.darkmode, html.darkmode {
+  background: #181818 !important;
+  color: #eee !important;
+}
+body.darkmode .navbar,
+html.darkmode .navbar {
+  background: #181818 !important;
+}
+body.darkmode .nav-links li a,
+html.darkmode .nav-links li a {
+  color: #fff !important;
+}
+body.darkmode .footer-distributed,
+html.darkmode .footer-distributed {
+  background: #181818 !important;
+  color: #fff !important;
+}
+body.darkmode .homescreen,
+html.darkmode .homescreen {
+  background: url('homescreen.avif') no-repeat center center;
+  background-size: cover;
+  color: #fff;
 }
