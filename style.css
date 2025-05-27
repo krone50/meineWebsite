@@ -264,22 +264,6 @@ html, body {
     from {bottom: 0; left: 0;}
     to {bottom: 120px; left: 300px;}
 }
-
-footer{
-   position: relative;
-    bottom: -100px; /* Initial außerhalb des sichtbaren Bereichs */
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    transition: bottom 0.3s ease; /* Sanftes Überblenden beim Scrollen */
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer.visible {
-    bottom: 0; /* Sichtbar, wenn die Klasse "visible" hinzugefügt wird */
-}
 body.homescreen{
     width: 100%;
     max-width: 100%;
@@ -444,9 +428,6 @@ nav input[type="checkbox"]{
     nav li{
         height: min-content;
         width: 100%;
-    }
-    footer{
-        position: static;
     }
     header{
         padding-top: 40px;
