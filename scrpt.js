@@ -17,26 +17,12 @@ window.addEventListener('scroll', function() {
         }
     });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("dark-mode-toggle");
-    const body = document.body;
-
-    // Checke, ob Dark Mode bereits gespeichert wurde
-    if (localStorage.getItem("dark-mode") === "enabled") {
-        body.classList.add("dark-mode");
-    }
-
-    toggleButton.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-
-        // Speichere den Dark Mode Status
-        if (body.classList.contains("dark-mode")) {
-            localStorage.setItem("dark-mode", "enabled");
-        } else {
-            localStorage.setItem("dark-mode", "disabled");
-        }
+    // Darkmode Toggle: Body-Klasse schalten
+    const darkToggle = document.getElementById("darkmode-toggle");
+    darkToggle.addEventListener("change", function() {
+      document.body.classList.toggle("darkmode", this.checked);
+      document.documentElement.classList.toggle("darkmode", this.checked);
     });
-});
 
 window.addEventListener("scroll", function() {
     const footer = document.querySelector('.footer-distributed');
