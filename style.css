@@ -458,7 +458,7 @@ nav input[type="checkbox"]{
 }
 
 .footer-distributed {
-    background-color: #333;
+    background-color: #333;  /* undurchsichtiges dunkles Grau */
     color: #fff;
     padding: 30px 20px;
     width: 100%;
@@ -469,6 +469,9 @@ nav input[type="checkbox"]{
     transform: translateY(60px);
     transition: opacity 0.7s cubic-bezier(0.77,0,0.18,1), transform 0.7s cubic-bezier(0.77,0,0.18,1);
     pointer-events: none;
+    z-index: 20; /* Damit er über dem Hintergrundbild liegt */
+    box-shadow: 0 -5px 32px 0 rgba(0,0,0,0.18); /* sanfter Schatten nach oben */
+    border-top: 3px solid #444; /* optional: dezenter Rand oben */
 }
 .footer-distributed.visible {
     opacity: 1;
