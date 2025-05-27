@@ -37,3 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+window.addEventListener("scroll", function() {
+    const footer = document.querySelector('.footer-distributed');
+    if (!footer) return;
+    // Prüfen, ob das untere Ende des Viewports am Seitenende ist
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 10)) {
+        footer.classList.add('visible');
+    } else {
+        footer.classList.remove('visible');
+    }
+});
