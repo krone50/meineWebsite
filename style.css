@@ -440,13 +440,22 @@ nav input[type="checkbox"]{
 }
 
 .footer-distributed {
-    background-color: #333; /* Dunkler Hintergrund */
+    background-color: #333;
     color: #fff;
     padding: 30px 20px;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: static;
+    bottom: auto;
+    left: auto;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.7s cubic-bezier(0.77,0,0.18,1), transform 0.7s cubic-bezier(0.77,0,0.18,1);
+    pointer-events: none;
+}
+.footer-distributed.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .footer-container {
