@@ -13,14 +13,19 @@
       <img src="Logo_Krone-MK.png" alt="Logo"/>
       <span class="logo-text">marius-poetry</span>
     </a>
-    <div class="navbar-group">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-        <li><a href="#poems">Poems</a></li>
-      </ul>
-      <div class="navbar-right">
-        <!-- Darkmode Toggle -->
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li class="dropdown">
+        <a href="#poems" class="dropdown-toggle">Poems <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#gedichte1">Gedichte 1</a></li>
+          <li><a href="#gedichte2">Gedichte 2</a></li>
+          <li><a href="#gedichte3">Gedichte 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <!-- Darkmode Toggle als Checkbox wie vorher, aber größer -->
         <input type="checkbox" id="darkmode-toggle" hidden>
         <label for="darkmode-toggle" id="switch" tabindex="0" aria-label="Darkmode Toggle">
           <span class="star"></span>
@@ -35,8 +40,8 @@
           </span>
           <span class="cloud"></span>
         </label>
-      </div>
-    </div>
+      </li>
+    </ul>
   </nav>
 
   <main>
