@@ -37,137 +37,187 @@ body{
 .main-content {
     flex: 1; /* Füllt den verfügbaren Platz, schiebt Footer nach unten */
 }
+* DARKMODE TOGGLE – KOMPAKT UND NAVBAR-KONFORM */
 #switch_wrap {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    transform: translate(-50%, -50%);
-    width: 210px;
-    height: 110px;
+    position: absolute;     /* statt fixed, damit es an die nav-Bar andockt */
+    top: 16px;              /* etwas Abstand nach unten */
+    right: 32px;            /* etwas Abstand nach innen/rechts */
+    width: 110px;           /* deutlich kleiner als vorher */
+    height: 60px;
     background: linear-gradient(to bottom right, #dadada, #b0b0b0);
-    border-radius: 60px;
+    border-radius: 30px;
+    z-index: 10;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.08) inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 #switch {
     position: relative;
-    top: 5px;
-    overflow: hidden;
-    left: 5px;
-    width: 200px;
-    height: 100px;
-    padding: 10px;
+    top: 2px;
+    left: 2px;
+    width: 100px;
+    height: 50px;
     background-color: #171F47;
-    border-radius: 60px;
-    z-index: 1;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.05) inset;
-    transition: background-color 300ms ease-in-out;
+    border-radius: 25px;
+    z-index: 2;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.05) inset;
+    transition: background-color 300ms;
     cursor: pointer;
+    padding: 4px;
+    display: flex;
 }
-.star{
+
+.star {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: #fafafa;
     z-index: 6;
-    transition: backgroud-color 100ms ease-in-out;
+    top: 8px;
+    left: 75px;
+    transition: background-color 100ms;
 }
-.special_star{
+
+.special_star {
     position: absolute;
     width: 2px;
     height: 2px;
     border-radius: 50%;
     background-color: #fafafa;
     z-index: 6;
-    transition: backgroud-color 100ms ease-in-out;
-    bottom: 0;
-    left: 0;
+    bottom: 4px;
+    left: 6px;
     transform: rotate(180deg);
-    animation: filante 1.5s ease-in-out;
+    animation: filante 1.2s ease-in-out;
     animation-fill-mode: forwards;
-    z-index: 1;
-}
-&:after {
-    content: '';
-    dipslay: black;
-    width: 30px;
-    height: 2px;
-    background: linear-gradient(to right, rgba)255
 }
 
 .bubble {
-    position: relative;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    background-color: F8F3DF;
-    border-radius: 50%;
-    box-shadow: 0px 0px 20px 10px rgba(252, 236, 197, 0.3);
-    z-index: 9;
-    overflow: hidden; 
-    transition: left 300ms ease-in-out, background-color 300ms ease-in-out;
-
-    .crat1 {
     position: absolute;
-    top: 45px;
-    left: 40px;
+    left: 12px;
     width: 30px;
     height: 30px;
+    background-color: #F8F3DF;
+    border-radius: 50%;
+    box-shadow: 0px 0px 12px 5px rgba(252, 236, 197, 0.2);
+    z-index: 9;
+    overflow: hidden;
+    transition: left 300ms, background-color 300ms;
+}
+
+.bubble .crat1,
+.bubble .crat2,
+.bubble .crat3 {
+    position: absolute;
     border-radius: 50%;
     background-color: #E3DBC7;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.2) inset;
-    transition: opacity 200ms ease-in-out;
-
-    &.active .crat1 {
-        opacity: 0;
-    };
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15) inset;
+    transition: opacity 200ms;
 }
-}
+.bubble .crat1 { top: 14px; left: 12px; width: 12px; height: 12px; }
+.bubble .crat2 { top: 6px; left: 4px; width: 6px; height: 6px; }
+.bubble .crat3 { top: 4px; left: 18px; width: 4px; height: 4px; }
 
-
-    .crat2 {
+.tree {
     position: absolute;
-    top: 20px;
-    left: 10px; 
+    bottom: 22px;
+    left: 54px;
+    width: 0px;
+    height: 0px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid #365E33;
+    border-top: 36px solid transparent;
+    z-index: 7;
+    transition: left 300ms, border-right-color 300ms;
+}
+.tree.t2 {
+    left: 39px;
+    bottom: 36px;
+}
+.tree:after{
+    left: 12px;
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    border-left: 12px solid transparent;
+    border-right: 12px solid #294137;
+    border-top: 36px solid transparent;
+    z-index: 7;
+    transition: border-left-color 300ms;
+}
+
+.cloud {
+    position: absolute;
+    bottom: 40px;
+    left: 8px;
     width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #E3DBC7;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.2) inset;
-    transition: opacity 200ms ease-in-out;
-    &.active .crat2 {
-        opacity: 0;
-    };
+    height: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 8;
+    opacity: 0;
+    animation: travel 7s ease-in-out infinite;
+    transition: opacity 300ms;
 }
-    .crate3 {
+.cloud:after {
+    content: '';
     position: absolute;
-    top: 15px;
-    left: 45px; 
-    width: 10px;
-    height: 10px;
+    top: -3px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
     border-radius: 50%;
-    background-color: #E3DBC7;
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.2) inset;
-    transition: opacity 200ms ease-in-out;
-    
-    &.active .crat3{
-        opacity: 0;
-    };
 }
-    .tree {
-        position: relative;
-        bottom: 50px;
-        left: 90px; 
-        width: 0px;
-        height: 0px;
-        border-left: 30px solid transparent;
-        border-right: 30px solid #365E33;
-        border-top: 100px solid transparent; 
-        z-index: 7;
-        transition: left 300ms ease-in-out, border-right-color;
+.cloud:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+}
 
-        &.t2 {
-        left: 72px;
-        bottom: 130px;
+@media (max-width: 800px) {
+    #switch_wrap {
+        width: 72px;
+        height: 36px;
+        top: 10px;
+        right: 14px;
+        border-radius: 18px;
+    }
+    #switch {
+        width: 62px;
+        height: 28px;
+        border-radius: 14px;
+        padding: 2px;
+    }
+    .star {
+        width: 7px;
+        height: 7px;
+        top: 3px;
+        left: 40px;
+    }
+    .special_star { left: 2px; bottom: 1px; }
+    .bubble { width: 18px; height: 18px; left: 6px; }
+    .bubble .crat1 { width: 5px; height: 5px; left: 5px; top: 7px; }
+    .bubble .crat2 { width: 2px; height: 2px; left: 1px; top: 3px; }
+    .bubble .crat3 { width: 2px; height: 2px; left: 10px; top: 3px; }
+    .tree { left: 30px; bottom: 18px; border-left: 6px solid transparent; border-right: 6px solid #365E33; border-top: 18px solid transparent; }
+    .tree.t2 { left: 25px; bottom: 26px; }
+    .tree:after { left: 6px; border-left: 6px solid transparent; border-right: 6px solid #294137; border-top: 18px solid transparent; }
+    .cloud { left: 4px; bottom: 20px; width: 10px; height: 4px; }
+    .cloud:after { width: 4px; height: 4px; left: 1px; top: -2px; }
+    .cloud:before { width: 6px; height: 6px; left: 2px; top: -3px; }
+}
+
+
         }
         &:after{
             left: 30px; 
@@ -183,39 +233,7 @@ body{
             transition: border-left-color 300ms ease-in-out;
         }
     }
-        .cloud {
-        position: relative;
-        bottom: 255px;
-        left: 5px;
-        width: 50px;
-        height: 20px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        z-index: 8; 
-        opacity: 0;
-        animation: travel 8s ease-in-out infinite;
-        transition: opacity 300ms ease-in-out;
 
-        &:after {
-        content: '';
-        position: absolute;
-        top: -6px; 
-        left: 5px;
-        width: 20px;
-        height: 20px;
-        background-color: #fff;
-        border-radius: 50%;
-        }
-        &:before {
-        content: '';
-        position: absolute;
-        top: -10px; 
-        left: 5px;
-        width: 30px;
-        height: 30px;
-        background-color: #fff;
-        border-radius: 50%;
-        }
     }
     &.activate {
         background-color: #78DEFA;
