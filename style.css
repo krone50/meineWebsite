@@ -405,9 +405,9 @@ nav input[type="checkbox"]{
     border-top: 3px solid #444; /* optional: dezenter Rand oben */
 }
 .footer-distributed.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .footer-container {
