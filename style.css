@@ -391,7 +391,6 @@ nav input[type="checkbox"]{
 .footer-distributed {
     background-color: #333;  /* undurchsichtiges dunkles Grau */
     color: #fff;
-    padding: 30px 20px;
     width: 100%;
     position: static;
     bottom: auto;
