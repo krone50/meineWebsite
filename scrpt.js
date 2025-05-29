@@ -17,12 +17,12 @@ window.addEventListener('scroll', function() {
         }
     });
 
-    // Darkmode Toggle: Body-Klasse schalten
-    const darkToggle = document.getElementById("darkmode-toggle");
-    darkToggle.addEventListener("change", function() {
-      document.body.classList.toggle("darkmode", this.checked);
-      document.documentElement.classList.toggle("darkmode", this.checked);
-    });
+  document.getElementById('darkmode-toggle');
+
+  toggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark', toggle.checked);
+  });
+</script>
 
 window.addEventListener("scroll", function() {
     const footer = document.querySelector('.footer-distributed');
