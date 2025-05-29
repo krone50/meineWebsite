@@ -397,7 +397,7 @@ nav input[type="checkbox"]{
     position: static;
     bottom: auto;
     left: auto;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(60px);
     transition: opacity 0.7s cubic-bezier(0.77,0,0.18,1), transform 0.7s cubic-bezier(0.77,0,0.18,1);
     pointer-events: none;
@@ -418,7 +418,7 @@ nav input[type="checkbox"]{
     max-width: 1200px;
     margin: 0 auto; /* Footer in der Mitte zentrieren */
     flex-wrap: wrap; /* Falls der Bildschirm klein ist, Elemente umbrechen */
-    padding: 0px;
+    padding: 10px;
 }
 
 /* Spalten gleichmäßig aufteilen */
