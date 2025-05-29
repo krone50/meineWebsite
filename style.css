@@ -395,7 +395,7 @@ nav input[type="checkbox"]{
     position: static;
     bottom: auto;
     left: auto;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(60px);
     transition: opacity 0.7s cubic-bezier(0.77,0,0.18,1), transform 0.7s cubic-bezier(0.77,0,0.18,1);
     pointer-events: none;
