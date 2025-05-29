@@ -23,198 +23,203 @@ html, body {
   transition: background 0.5s, color 0.5s;
 }
 .homescreen {
-  background-image: url('homescreen.avif');
-  background-size: cover;
-  background-position: center;
-  min-height: 80vh;
-  width: 100%;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 0 32px;
-  height: 56px;
-  background: transparent;
-  position: relative;
-  z-index: 1;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.logo img {
-  width: 28px;
-  height: auto;
-  margin-right: 10px;
-}
-.logo-text {
-  color: #222;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 0 2px 8px #fff8;
-}
-
-.toggle-container {
-  position: fixed;
-  top: 16px;
-  right: 20px;
-  z-index: 9999;
-}
-
-/* Kompakter Toggle Switch */
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
-  cursor: pointer;
-  overflow: visible;
-}
-.toggle-switch .background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ffe066;
-  border-radius: 30px;
-  top: 0; left: 0;
-  transition: background 0.5s;
-  z-index: 1;
-}
-
-/* Sterne exakt angeordnet, aber kleiner */
-.toggle-switch .stars {
-  position: absolute;
-  top: 8px; left: 10px;
-  width: 38px; height: 12px;
-  z-index: 3;
-  pointer-events: none;
-}
-.toggle-switch .star {
-  position: absolute;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0;
-  transition: opacity 0.5s 0.1s;
-}
-.toggle-switch .star1 { width: 2px; height: 2px; left: 0px;  top: 0px; }
-.toggle-switch .star2 { width: 1.5px; height: 1.5px; left: 7px; top: 5px; }
-.toggle-switch .star3 { width: 2px; height: 2px; left: 17px; top: 1px; }
-.toggle-switch .star4 { width: 1.5px; height: 1.5px; left: 25px; top: 7px; }
-.toggle-switch .star5 { width: 2px; height: 2px; left: 33px; top: 3px; }
-
-/* Kleine Wolke */
-.toggle-switch .cloud {
-  position: absolute;
-  right: 8px;
-  bottom: 6px;
-  width: 13px; height: 6px;
-  background: #fff;
-  border-radius: 6px;
-  z-index: 4;
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-.toggle-switch .cloud::before,
-.toggle-switch .cloud::after {
-  content: "";
-  position: absolute;
-  background: #fff;
-  border-radius: 7px;
-}
-.toggle-switch .cloud::before {
-  left: -4px; top: -2px;
-  width: 6px; height: 6px;
-}
-.toggle-switch .cloud::after {
-  left: 7px; top: -1px;
-  width: 5px; height: 5px;
-}
-
-/* Bäume kompakt */
-.toggle-switch .trees {
-  position: absolute;
-  left: 8px;
-  bottom: 5px;
-  width: 14px; height: 10px;
-  z-index: 4;
-  display: flex;
-  gap: 2px;
-}
-.toggle-switch .tree {
-  width: 4.5px; height: 8px;
-  background: #82c91e;
-  border-radius: 1.2px 1.2px 2px 2px;
-  position: relative;
-  bottom: 0;
-  transition: background 0.5s;
-}
-.toggle-switch .tree2 {
-  height: 6px;
-  background: #b6d86a;
-  margin-top: 2px;
-}
-
-/* Sonne/Mond Kugel kleiner */
-.toggle-switch .ball {
-  position: absolute;
-  top: 2px; left: 2px;
-  width: 22px; height: 22px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 5px #ffd70066;
-  z-index: 5;
-  transition:
-    left 0.5s cubic-bezier(0.67,-0.13, 0.29, 1.23),
-    background 0.5s,
-    box-shadow 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Krater kompakt */
-.toggle-switch .crater {
-  position: absolute;
-  background: #e6e6e6;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.toggle-switch .crater1 { width: 3.5px; height: 3.5px; left: 6px; top: 6px;}
-.toggle-switch .crater2 { width: 2.5px; height: 2.5px; left: 13px; top: 3.5px;}
-.toggle-switch .crater3 { width: 2px; height: 2px; left: 14px; top: 13px;}
-
-/* Animationen bei aktivierter Checkbox */
-#darkmode-toggle:checked + .toggle-switch .background {
-  background: #343a40;
-}
-#darkmode-toggle:checked + .toggle-switch .ball {
-  left: 36px;
-  background: #dee2e6;
-  box-shadow: 0 0 7px #fff, 0 0 20px #fff8;
-}
-#darkmode-toggle:checked + .toggle-switch .crater {
-  opacity: 1;
-}
-#darkmode-toggle:checked + .toggle-switch .tree {
-  background: #5c7c25;
-}
-#darkmode-toggle:checked + .toggle-switch .tree2 {
-  background: #7b9655;
-}
-#darkmode-toggle:checked + .toggle-switch .cloud {
-  opacity: 0;
-}
-#darkmode-toggle:checked + .toggle-switch .star {
-  opacity: 1;
-}
-
-/* Darkmode für body */
-body.darkmode, html.darkmode {
-  background: #181818;
-  color: #fff;
+    background-image: url('homescreen.avif');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    height: 56px;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logo img {
+    width: 28px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .logo-text {
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 8px #fff8;
+  }
+  
+  .toggle-container {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  /* Kompakter Toggle Switch */
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 75px;
+    height: 37px;
+    cursor: pointer;
+    overflow: visible;
+  }
+  .toggle-switch .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: lightblue;
+    border-radius: 30px;
+    top: 0; left: 0;
+    transition: background 0.5s;
+    z-index: 1;
+    border: 2px solid #bbb;
+    box-sizing: border-box;
+  }
+  
+  /* Sterne exakt angeordnet, aber kleiner */
+  .toggle-switch .stars {
+    position: absolute;
+    top: 8px; left: 10px;
+    width: 38px; height: 12px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .toggle-switch .star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0;
+    transition: opacity 0.5s 0.1s;
+  }
+  .toggle-switch .star1 { width: 2px; height: 2px; left: 0px;  top: 0px; }
+  .toggle-switch .star2 { width: 1.5px; height: 1.5px; left: 7px; top: 5px; }
+  .toggle-switch .star3 { width: 2px; height: 2px; left: 17px; top: 1px; }
+  .toggle-switch .star4 { width: 1.5px; height: 1.5px; left: 25px; top: 7px; }
+  .toggle-switch .star5 { width: 2px; height: 2px; left: 33px; top: 3px; }
+.toggle-switch .star6 { width: 1.5px; height: 1.5px; left: 11px; top: -3px; }
+.toggle-switch .star7 { width: 2px; height: 2px; left: -5px; top: 8px; }
+.toggle-switch .star8 { width: 1.5px; height: 1.5px; left: 25px; top: 0px; }
+  
+  /* Kleine Wolke */
+  .toggle-switch .cloud {
+    position: absolute;
+    right: 14px;
+    bottom: 15px;
+    width: 17px; height: 11px;
+    background: #fff;
+    border-radius: 6px;
+    z-index: 4;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  .toggle-switch .cloud::before,
+  .toggle-switch .cloud::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 7px;
+  }
+  .toggle-switch .cloud::before {
+    left: -4px; top: -4px;
+    width: 13px; height: 11px;
+  }
+  .toggle-switch .cloud::after {
+    left: 7px; top: -2px;
+    width: 9px; height: 5px;
+  }
+  
+  /* Bäume kompakt */
+  .toggle-switch .trees {
+    position: absolute;
+    left: 41px;
+    bottom: 12px;
+    width: 14px; height: 10px;
+    z-index: 3;
+    display: flex;
+    gap: -4px;
+  }
+  .toggle-switch .tree {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 20px solid #82c91e;
+    background: none;
+    border-radius: 0;
+    margin-left: -3px;
+  }
+  .toggle-switch .tree2 {
+    height: 2px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 20px solid #82c91e;
+    background: darkgreen;
+  }
+  
+  /* Sonne/Mond Kugel kleiner */
+  .toggle-switch .ball {
+    position: absolute;
+    top: 4px; left: 4px;
+    width: 29px; height: 29px;
+    background: #fbe870;
+    border-radius: 50%;
+    box-shadow: 0 0 7px #ffcf24, 0 0 10px #24ffd9;
+    z-index: 5;
+    transition:
+      left 0.5s cubic-bezier(0.67,-0.13, 0.29, 1.23),
+      background 0.5s,
+      box-shadow 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Krater kompakt */
+  .toggle-switch .crater {
+    position: absolute;
+    background: #444;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .toggle-switch .crater1 { width: 5px; height: 5px; left: 6px; top: 8px;}
+  .toggle-switch .crater2 { width: 2.5px; height: 2.5px; left: 16px; top: 3.5px;}
+  .toggle-switch .crater3 { width: 9px; height: 9px; left: 15px; top: 16px;}
+  
+  /* Animationen bei aktivierter Checkbox */
+  #darkmode-toggle:checked + .toggle-switch .background {
+    background: #343a40;
+  }
+  #darkmode-toggle:checked + .toggle-switch .ball {
+    left: 42px;
+    background: #dee2e6;
+    box-shadow: 0 0 7px #fff, 0 0 20px #fff8;
+  }
+  #darkmode-toggle:checked ~ .toggle-switch .crater {
+    opacity: 1;
+  }
+  #darkmode-toggle:checked + .toggle-switch .trees {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  #darkmode-toggle:checked + .toggle-switch .cloud {
+    opacity: 0;
+  }
+  #darkmode-toggle:checked + .toggle-switch .star {
+    opacity: 1;
+  }
+  
+ body.dark .homescreen {
+  background-image: url('dunkeler-wald.jpg');
 }
 body.homescreen{
     width: 100%;
