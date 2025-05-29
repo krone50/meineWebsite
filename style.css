@@ -23,12 +23,23 @@ html, body {
   transition: background 0.5s, color 0.5s;
 }
 .homescreen {
-    background-image: url('homescreen.avif');
-    background-size: cover;
-    background-position: center;
-    min-height: 80vh;
-    width: 100%;
-  }
+  background-image: url('homescreen.avif');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homescreen img {
+  width: 100%;
+  max-width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
   
   .navbar {
     display: flex;
@@ -221,20 +232,6 @@ html, body {
 dark.homescreen {
   background-image: url('dunkeler-wald.jpg');
 }
-homescreen{
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal zentrieren */
-}
-homescreen img {
-    width: 100%; /* Bild passt sich an die gesamte Breite des Containers an */
-    max-width: 100vw;
-    height: auto; /* Höhe wird proportional zur Breite angepasst */
-    object-fit: cover; /* Stellt sicher, dass das Bild den Container ausfüllt, ohne verzerrt zu werden */
-}
-
 
 /*Navigation mit BurgerMenu */
 nav{
