@@ -218,17 +218,17 @@ html, body {
     opacity: 1;
   }
   
- body.dark .homescreen {
+ main.dark .homescreen {
   background-image: url('dunkeler-wald.jpg');
 }
-body.homescreen{
+main.homescreen{
     width: 100%;
     max-width: 100%;
     display: flex;
     justify-content: center; /* Horizontal zentrieren */
     align-items: center; /* Vertikal zentrieren */
 }
-body.homescreen img {
+main.homescreen img {
     width: 100%; /* Bild passt sich an die gesamte Breite des Containers an */
     max-width: 100vw;
     height: auto; /* Höhe wird proportional zur Breite angepasst */
