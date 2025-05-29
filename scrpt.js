@@ -20,7 +20,7 @@ window.addEventListener('scroll', function() {
   document.getElementById('darkmode-toggle');
 
   toggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark', toggle.checked);
+    document.main.classList.toggle('dark', toggle.checked);
   });
 </script>
 
