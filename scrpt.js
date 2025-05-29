@@ -17,12 +17,13 @@ window.addEventListener('scroll', function() {
         }
     });
 
-  document.getElementById('darkmode-toggle');
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('darkmode-toggle');
 
   toggle.addEventListener('change', () => {
-    document.main.classList.toggle('dark', toggle.checked);
+    document.body.classList.toggle('darkmode', toggle.checked);
   });
-</script>
+});
 
 window.addEventListener("scroll", function() {
     const footer = document.querySelector('.footer-distributed');
