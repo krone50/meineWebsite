@@ -450,40 +450,36 @@ nav input[type="checkbox"]{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;  /* Einheitliche Breite */
-    height: 40px; /* Einheitliche Höhe */
-    border-radius: 50%; /* Macht die Icons rund */
-    color: white; 
-    font-size: 20px; /* Einheitliche Icon-Größe */
+    width: 50px;           /* Gleichmäßig große Fläche */
+    height: 50px;
+    border-radius: 50%;    /* Kreisform */
+    background-color: #444; /* Grundfarbe, wird ggf. vom Icon überschrieben */
+    color: white;
+    font-size: 24px;        /* Einheitliche Icon-Größe */
     text-decoration: none;
-    margin: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 .social-links a i {
-    font-size: 20px; /* Gleiche Icon-Größe für alle */
+    margin:  0;
 }
 /* Hover-Effekt */
 .social-links a:hover {
-    opacity: 0.8;
+    transform: scale(1.1);  /* sanfte Vergrößerung beim Hover */
+    opacity: 0.85;
 }
 .social-icon:hover {
     background-color: #555;
 }
 .social-links a .fa-youtube {
     background-color: #FF0008;
-    padding: 10px;
-    border-radius: 50%;
 }
 
 .social-links a .fa-instagram {
     background-color: #E4405F;
-    padding: 10px;
-    border-radius: 50%;
 }
 
 .social-links a .fa-linkedin-in {
     background-color: #0077B5;
-    padding: 10px;
-    border-radius: 50%;
 }
 
 /* Responsive Design für kleine Bildschirme */
