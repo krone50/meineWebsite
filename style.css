@@ -229,7 +229,7 @@ html, body {
     opacity: 1;
   }
   
-dark.homescreen {
+darkmode.homescreen {
   background-image: url('dunkeler-wald.jpg');
 }
 
