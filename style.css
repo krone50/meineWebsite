@@ -416,7 +416,6 @@ nav input[type="checkbox"]{
     max-width: 1200px;
     margin: 0 auto; /* Footer in der Mitte zentrieren */
     flex-wrap: wrap; /* Falls der Bildschirm klein ist, Elemente umbrechen */
-    padding: 10px;
 }
 
 /* Spalten gleichmäßig aufteilen */
