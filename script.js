@@ -1,9 +1,11 @@
-const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 
-mobileMenu.addEventListener("click", () => {
+if (mobileMenu && navLinks) {
+  mobileMenu.addEventListener("click", () => {
     navLinks.classList.toggle("active");
-});
+  });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('darkmode-toggle');
